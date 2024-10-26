@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BashCraft Club</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="scrollbar"></body>
+
+
+    <div class="nav">
+        <div class="logo">
+            <img src="images/oie_jpg.png" alt="">
+            <div class="logo-name">
+                <h3>BashCraft Club </h3>
+            </div>
+    
+        </div>
+        
+        <div class="nav_cont">
+            <ul>
+                <a href="#About"><li>About Us</li></a>
+                <a href="#Events"><li>Events </li></a>
+                <a href="#JoinUs"><li>Join Us</li></a>
+                <a href="#Follow"><li>Contact</li></a>
+            </ul>
+        </div>
+
+
+        <div class="vit-logo">
+            <img src="images/vitbhopal.png" alt="">
+        </div>
+    </div>
+
+
+    <div class="container">
+
+
+        <div class="main" id="About">
+            <h1 class="welcome">Welcome To the  </h1>
+            <h1 class="ai">BashCraft Club </h1>
+            <div class="main-logo">
+                <img src="images/oie_jpg.png" alt="">
+            </div>
+            
+        </div>
+        <div class="hero">
+            <div class="hero-header">
+                <h1 id="typing-animation"></h1>
+                <p >We empower  students to master command-line skills, create automation scripts, and explore Linux tools through hands-on projects and collaborative workshops.</p>
+            </div>
+            <div class="hero-image">
+                <img src="images/best-command-line-tools.png" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="event_section"id="Events">
+        <div class="events" >
+            <div class="header">
+                <h1>Our Upcoming Events </h1>
+            </div>
+
+            <div class="cards">
+                <div class="card card1">
+                    <div class="date">
+                        <p>28th </p>   
+                        <p>Oct</p>
+                    </div>
+                    <div class="image">
+                        <img src="images/event1.jpeg" alt="">
+                    </div>
+                    <div class="card-header">
+                        <h3>Shell Shock</h3>
+                    </div>
+                    <div class="card-content">
+                        <p>Dive into the world of command-line magic! Compete to solve real-world tasks using powerful Bash commands.</p>
+                    </div>
+                </div>
+
+                <div class="card card2">
+                    <div class="date">
+                        <p>30th </p>   
+                        <p>Oct</p>
+                    </div>
+                    <div class="image">
+                        <img src="images/event2.jpeg" alt="">
+                    </div>
+                    <div class="card-header">
+                        <h3>Script Sprint</h3>
+                    </div>
+                    <div class="card-content">
+                        <p> Race against the clock to create efficient Bash scripts! Sharpen your coding skills with fun, timed challenges.</p>
+                    </div>
+                </div>
+
+                <div class="card card3">
+                    <div class="date">
+                        <p>1st</p>   
+                        <p>Nov</p>
+                    </div>
+                    <div class="image image3">
+                        <img src="images/event2.jpeg" alt="">
+                    </div>
+                    <div class="card-header">
+                        <h3>Code & Conquer</h3>
+                    </div>
+                    <div class="card-content">
+                        <p> Tackle exciting scripting challenges and automate tasks to dominate the command line!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-section" id="JoinUs">
+        <div class="footer">
+            <div class="foot-head">
+                <h1> Join the BashCraft Community</h1>
+                <p class="pad">
+                    Joining the Bash Craft Club offers the opportunity to enhance command-line skills, learn automation techniques, collaborate on projects, and gain practical experience in scripting, all while being part of a supportive community of tech enthusiasts. </p>
+             
+            </div>
+
+            <div class="social">
+                <div class="social-head" id="Follow">
+                    <div class="for">
+                        <h3>Follow us on </h3>
+                    </div>
+                    <div class="social-icon">
+                        <ul>
+                            <li><a href="#About"><img src="images/insta.svg" alt=""></a></li>
+                            <li><a href="#About"><img src="images/linkedin.svg" alt=""></a></li>
+                            <li><a href="#About"><img src="images/facebook.svg" alt=""></a></li>
+                            <li><a href="#About"><img src="images/github.svg" alt=""></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="ai-logo">
+                    <img src="images/oie_jpg.png" alt="">
+                </div>
+
+                <div class="college-logo">
+                    <img src="images/vitbhopal.png" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const text = "Unleash the Power of the Command Line !";
+        const typingSpeed = 100; 
+        let index = 0;
+        
+        function typeText() {
+            if (index < text.length) {
+                document.getElementById("typing-animation").innerHTML += text.charAt(index);
+                index++;
+                setTimeout(typeText, typingSpeed);
+            } else {
+                
+                const cursorBlink = setInterval(() => {
+                    const heroHeader = document.getElementById("typing-animation");
+                    heroHeader.style.borderRight = heroHeader.style.borderRight === "2px solid white" ? "2px solid transparent" : "2px solid white";
+                }, 500);
+              
+                setTimeout(() => clearInterval(cursorBlink), 3000);
+            }
+        }
+
+        typeText(); 
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const header = document.querySelector('.header h1');
+    
+           
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        header.classList.add('animated');
+                        observer.unobserve(header); 
+                    }
+                });
+            }, { threshold: 0.1 }); 
+    
+            observer.observe(header); 
+        });
+
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const eventHeader = document.querySelector('.header h1');
+            const communityHeader = document.querySelector('.foot-head h1');
+    
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        if (entry.target === eventHeader) {
+                            eventHeader.classList.add('animated');
+                        }
+                        if (entry.target === communityHeader) {
+                            communityHeader.classList.add('animated');
+                        }
+                        observer.unobserve(entry.target); 
+                    }
+                });
+            }, { threshold: 0.1 }); 
+    
+            observer.observe(eventHeader); 
+            observer.observe(communityHeader); 
+        });
+    </script>
+</body>
+</html>
